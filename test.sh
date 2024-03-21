@@ -11,4 +11,5 @@ WASM=$1
 
 cp $WASM webassembly/pdfium.wasm
 # go test -timeout 5s ./internal/implementation_webassembly -v --ginkgo.v --ginkgo.focus alpha channel -count 1 -args 2>&1 
-go test -timeout 5s ./internal/implementation_webassembly -v --ginkgo.v --ginkgo.focus alpha channel -count 1 -args 2>&1 | egrep --quiet '(timed out)|(wasm error)'
+go test -timeout 3s ./internal/implementation_webassembly -v --ginkgo.v --ginkgo.focus alpha channel -count 1 -args 2>&1 \
+	| egrep --quiet '(timed out)|(out of bounds memory access)'
