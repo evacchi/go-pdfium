@@ -6,6 +6,7 @@ import (
 	_ "embed"
 	"errors"
 	"fmt"
+	"github.com/tetratelabs/wazero/experimental/opt"
 	"io"
 	"os"
 	"path/filepath"
@@ -108,7 +109,8 @@ func Init(config Config) (pdfium.Pool, error) {
 	}
 
 	if config.RuntimeConfig == nil {
-		config.RuntimeConfig = wazero.NewRuntimeConfig()
+		//config.RuntimeConfig = wazero.NewRuntimeConfig()
+		config.RuntimeConfig = opt.NewRuntimeConfigOptimizingCompiler()
 	}
 
 	poolContext := context.WithValue(context.Background(), experimental.FunctionListenerFactoryKey{}, logging.NewLoggingListenerFactory(os.Stdout))

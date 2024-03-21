@@ -10,7 +10,7 @@ require (
 	github.com/onsi/ginkgo/v2 v2.16.0
 	github.com/onsi/gomega v1.32.0
 	github.com/stretchr/testify v1.9.0
-	github.com/tetratelabs/wazero v1.6.0
+	github.com/tetratelabs/wazero v1.7.0
 	golang.org/x/net v0.22.0
 	golang.org/x/text v0.14.0
 )
@@ -36,3 +36,5 @@ require (
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/tetratelabs/wazero => /Users/evacchi/Devel/github.com/tetratelabs/wazero

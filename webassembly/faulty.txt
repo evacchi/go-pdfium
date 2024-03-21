@@ -1,0 +1,1905 @@
+[[[SSA for [4960/5529].$5011]]]
+signatures:
+	sig0: i64i64i32_v
+	sig1: i64i64i32_i32
+	sig2: i64i64i32i32_v
+	sig3: i64i64i32i32_i32
+	sig4: i64i64i32i32i32_i32
+	sig6: i64i64i32i32i32_v
+	sig8: i64i64i32i32i32i32i32_i32
+
+blk0: (exec_ctx:i64, module_ctx:i64, v2:i32, v3:i32)
+	v4:i32 = Iconst_32 0x0
+	v5:i32 = Iconst_32 0x0
+	v6:i32 = Iconst_32 0x0
+	v7:i32 = Iconst_32 0x0
+	v8:i32 = Iconst_32 0x0
+	v9:i32 = Iconst_32 0x0
+	v10:i32 = Iconst_32 0x0
+	v11:i32 = Iconst_32 0x0
+	v12:i32 = Iconst_32 0x0
+	v13:i32 = Iconst_32 0x0
+	v14:i32 = Iconst_32 0x0
+	v15:i32 = Iconst_32 0x0
+	v16:i32 = Iconst_32 0x0
+	v17:i32 = Load module_ctx, 0x4e0
+	v18:i32 = Iconst_32 0xffffffc0
+	v19:i32 = Iadd v17, v18
+	Store v19, module_ctx, 0x4e0
+	v20:i64 = Iconst_64 0x4
+	v21:i64 = UExtend v2, 32->64
+	v22:i64 = Uload32 module_ctx, 0x10
+	v23:i64 = Iadd v21, v20
+	v24:i32 = Icmp lt_u, v22, v23
+	ExitIfTrue v24, exec_ctx, memory_out_of_bounds
+	v25:i64 = Load module_ctx, 0x8
+	v26:i64 = Iadd v25, v21
+	v27:i32 = Load v26, 0x0
+	v28:i32 = Iconst_32 0x1
+	v29:i32 = Icmp neq, v27, v28
+	Brnz v29, blk2, v19
+	Jump blk3
+
+blk1: () <-- (blk21,blk25,blk53)
+	Exit exec_ctx, unreachable
+
+blk2: (v1489:i32) <-- (blk0,blk9,blk61,blk68,blk71,blk65,blk72,blk74,blk75,blk107,blk5)
+	v1490:i32 = Iconst_32 0xffffffc0
+	v1491:i32 = Isub v1489, v1490
+	Store v1491, module_ctx, 0x4e0
+	Return
+
+blk3: () <-- (blk0)
+	v30:i32 = Iconst_32 0x14
+	v31:i32 = Iadd v2, v30
+	Jump blk4, v2, v19, v31, v3
+
+blk4: (v32:i32,v326:i32,v368:i32,v1453:i32) <-- (blk3,blk62)
+	v33:i64 = Iconst_64 0x2c
+	v34:i64 = UExtend v2, 32->64
+	v35:i64 = Uload32 module_ctx, 0x10
+	v36:i64 = Iadd v34, v33
+	v37:i32 = Icmp lt_u, v35, v36
+	ExitIfTrue v37, exec_ctx, memory_out_of_bounds
+	v38:i32 = Load v26, 0x28
+	Brz v38, blk7
+	Jump blk6
+
+blk5: () <-- (blk40)
+	Jump blk2, v1471
+
+blk6: () <-- (blk4)
+	Jump blk8, v38, v32, v368, v1453, v326
+
+blk7: () <-- (blk4)
+	v40:i64 = Iconst_64 0x28
+	v41:i64 = UExtend v2, 32->64
+	v42:i64 = Iadd v41, v40
+	v43:i32 = Icmp lt_u, v35, v42
+	ExitIfTrue v43, exec_ctx, memory_out_of_bounds
+	v44:i64 = Load module_ctx, 0x8
+	v45:i64 = Iadd v44, v41
+	v46:i32 = Load v45, 0x24
+	v47:i32 = Load v45, 0x4
+	v48:i64 = Iconst_64 0x14
+	v49:i64 = UExtend v47, 32->64
+	v50:i64 = Iadd v49, v48
+	v51:i32 = Icmp lt_u, v35, v50
+	ExitIfTrue v51, exec_ctx, memory_out_of_bounds
+	v52:i64 = Iadd v44, v49
+	v53:i32 = Load v52, 0x10
+	v54:i32 = Load v52, 0xc
+	v55:i32 = Isub v53, v54
+	v56:i32 = Iconst_32 0x1c
+	v57:i32 = Sdiv v55, v56
+	v58:i32 = Icmp ge_u, v46, v57
+	Brz v58, blk10
+	Jump blk9
+
+blk8: (v39:i32,v406:i32,v1432:i32,v1452:i32,v1469:i32) <-- (blk6,blk18)
+	v388:i64 = Iconst_64 0x4
+	v389:i64 = UExtend v39, 32->64
+	v390:i64 = Uload32 module_ctx, 0x10
+	v391:i64 = Iadd v389, v388
+	v392:i32 = Icmp lt_u, v390, v391
+	ExitIfTrue v392, exec_ctx, memory_out_of_bounds
+	v393:i64 = Load module_ctx, 0x8
+	v394:i64 = Iadd v393, v389
+	v395:i32 = Load v394, 0x0
+	v396:i64 = Iconst_64 0x64
+	v397:i64 = UExtend v395, 32->64
+	v398:i64 = Iadd v397, v396
+	v399:i32 = Icmp lt_u, v390, v398
+	ExitIfTrue v399, exec_ctx, memory_out_of_bounds
+	v400:i64 = Iadd v393, v397
+	v401:i32 = Load v400, 0x60
+	v402:i32 = Load v400, 0x54
+	v403:i32 = Load v400, 0x58
+	v404:i32 = Icmp eq, v402, v403
+	Brz v404, blk32
+	Jump blk31
+
+blk9: () <-- (blk7)
+	v59:i32 = Iconst_32 0x2
+	Store v59, v45, 0x0
+	Jump blk2, v326
+
+blk10: () <-- (blk7)
+	Jump blk11
+
+blk11: () <-- (blk10)
+	v60:i32 = Iconst_32 0x1c
+	v61:i32 = Imul v46, v60
+	v62:i32 = Iadd v54, v61
+	v63:i64 = Iconst_64 0x2c
+	v64:i64 = UExtend v2, 32->64
+	v65:i64 = Iadd v64, v63
+	v66:i32 = Icmp lt_u, v35, v65
+	ExitIfTrue v66, exec_ctx, memory_out_of_bounds
+	v67:i64 = Iadd v44, v64
+	Store v62, v67, 0x28
+	v68:i64 = Iconst_64 0x4
+	v69:i64 = UExtend v62, 32->64
+	v70:i64 = Iadd v69, v68
+	v71:i32 = Icmp lt_u, v35, v70
+	ExitIfTrue v71, exec_ctx, memory_out_of_bounds
+	v72:i64 = Iadd v44, v69
+	v73:i32 = Load v72, 0x0
+	v74:i64 = Iconst_64 0x58
+	v75:i64 = UExtend v73, 32->64
+	v76:i64 = Iadd v75, v74
+	v77:i32 = Icmp lt_u, v35, v76
+	ExitIfTrue v77, exec_ctx, memory_out_of_bounds
+	v78:i64 = Iadd v44, v75
+	v79:i32 = Load v78, 0x54
+	v80:i64 = Iconst_64 0x64
+	v81:i64 = UExtend v73, 32->64
+	v82:i64 = Iadd v81, v80
+	v83:i32 = Icmp lt_u, v35, v82
+	ExitIfTrue v83, exec_ctx, memory_out_of_bounds
+	v84:i32 = Load v78, 0x60
+	v85:i64 = Iconst_64 0x68
+	v86:i64 = UExtend v73, 32->64
+	v87:i64 = Iadd v86, v85
+	v88:i32 = Icmp lt_u, v35, v87
+	ExitIfTrue v88, exec_ctx, memory_out_of_bounds
+	v89:i32 = Load v78, 0x64
+	v90:i32 = Iadd v84, v89
+	v91:i32 = Iconst_32 0x8
+	v92:i32 = Ushr v90, v91
+	v93:i32 = Iconst_32 0xfffffc
+	v94:i32 = Band v92, v93
+	v95:i32 = Iadd v79, v94
+	v96:i32 = Load v78, 0x58
+	v97:i32 = Icmp eq, v79, v96
+	Brz v97, blk13
+	Jump blk12
+
+blk12: () <-- (blk11)
+	v99:i32 = Iconst_32 0x0
+	Jump blk14, v99, v32, v95, v47, v326, v368, v1453
+
+blk13: () <-- (blk11)
+	v100:i64 = Iconst_64 0x4
+	v101:i64 = UExtend v95, 32->64
+	v102:i64 = Iadd v101, v100
+	v103:i32 = Icmp lt_u, v35, v102
+	ExitIfTrue v103, exec_ctx, memory_out_of_bounds
+	v104:i64 = Iadd v44, v101
+	v105:i32 = Load v104, 0x0
+	v106:i32 = Iconst_32 0x3ff
+	v107:i32 = Band v90, v106
+	v108:i32 = Iconst_32 0x2
+	v109:i32 = Ishl v107, v108
+	v110:i32 = Iadd v105, v109
+	Jump blk14, v110, v32, v95, v47, v326, v368, v1453
+
+blk14: (v98:i32,v118:i32,v119:i32,v126:i32,v325:i32,v367:i32,v1456:i32) <-- (blk12,blk13)
+	v111:i64 = Iconst_64 0x34
+	v112:i64 = UExtend v2, 32->64
+	v113:i64 = Uload32 module_ctx, 0x10
+	v114:i64 = Iadd v112, v111
+	v115:i32 = Icmp lt_u, v113, v114
+	ExitIfTrue v115, exec_ctx, memory_out_of_bounds
+	v116:i64 = Load module_ctx, 0x8
+	v117:i64 = Iadd v116, v112
+	Store v98, v117, 0x30
+	Store v119, v117, 0x2c
+	v120:i32 = Iconst_32 0x90
+	v121:i32 = Call f106:sig1, exec_ctx, module_ctx, v120
+	v122:i64 = Load module_ctx, 0x8
+	v123:i64 = Uload32 module_ctx, 0x10
+	v124:i32 = Load module_ctx, 0x4e0
+	v125:i32 = Load module_ctx, 0x4f0
+	v127:i64 = Iconst_64 0xc
+	v128:i64 = UExtend v2, 32->64
+	v129:i64 = Iadd v128, v127
+	v130:i32 = Icmp lt_u, v123, v129
+	ExitIfTrue v130, exec_ctx, memory_out_of_bounds
+	v131:i64 = Iadd v122, v128
+	v132:i32 = Load v131, 0x8
+	v133:i32 = Call f4134:sig4, exec_ctx, module_ctx, v121, v126, v132
+	v134:i64 = Load module_ctx, 0x8
+	v135:i64 = Uload32 module_ctx, 0x10
+	v136:i32 = Load module_ctx, 0x4e0
+	v137:i32 = Load module_ctx, 0x4f0
+	v138:i64 = Iconst_64 0x14
+	v139:i64 = UExtend v2, 32->64
+	v140:i64 = Iadd v139, v138
+	v141:i32 = Icmp lt_u, v135, v140
+	ExitIfTrue v141, exec_ctx, memory_out_of_bounds
+	v142:i64 = Iadd v134, v139
+	v143:i32 = Load v142, 0x10
+	Store v133, v142, 0x10
+	Brz v143, blk16
+	Jump blk15
+
+blk15: () <-- (blk14)
+	v144:i32 = Call f4135:sig1, exec_ctx, module_ctx, v143
+	v145:i64 = Load module_ctx, 0x8
+	v146:i64 = Uload32 module_ctx, 0x10
+	v147:i32 = Load module_ctx, 0x4e0
+	v148:i32 = Load module_ctx, 0x4f0
+	Call f76:sig0, exec_ctx, module_ctx, v144
+	v149:i64 = Load module_ctx, 0x8
+	v150:i64 = Uload32 module_ctx, 0x10
+	v151:i32 = Load module_ctx, 0x4e0
+	v152:i32 = Load module_ctx, 0x4f0
+	Jump blk17, v118, v325, v367, v1456
+
+blk16: () <-- (blk14)
+	Jump blk17, v118, v325, v367, v1456
+
+blk17: (v153:i32,v324:i32,v366:i32,v1455:i32) <-- (blk15,blk16)
+	v154:i64 = Iconst_64 0x10
+	v155:i64 = UExtend v2, 32->64
+	v156:i64 = Uload32 module_ctx, 0x10
+	v157:i64 = Iadd v155, v154
+	v158:i32 = Icmp lt_u, v156, v157
+	ExitIfTrue v158, exec_ctx, memory_out_of_bounds
+	v159:i64 = Load module_ctx, 0x8
+	v160:i64 = Iadd v159, v155
+	v161:i32 = Load v160, 0xc
+	v162:i32 = Iconst_32 0x0
+	v163:i32 = Icmp eq, v161, v162
+	Brnz v163, blk18, v153, v324, v366, v1455
+	Jump blk19
+
+blk18: (v271:i32,v323:i32,v365:i32,v1454:i32) <-- (blk17,blk19,blk23,blk26,blk27)
+	v273:i64 = Iconst_64 0x14
+	v274:i64 = UExtend v2, 32->64
+	v275:i64 = Uload32 module_ctx, 0x10
+	v276:i64 = Iadd v274, v273
+	v277:i32 = Icmp lt_u, v275, v276
+	ExitIfTrue v277, exec_ctx, memory_out_of_bounds
+	v278:i64 = Load module_ctx, 0x8
+	v279:i64 = Iadd v278, v274
+	v280:i32 = Load v279, 0x10
+	v281:i32 = Iconst_32 0x7c
+	v282:i32 = Iadd v280, v281
+	v283:i64 = Iconst_64 0x2c
+	v284:i64 = UExtend v2, 32->64
+	v285:i64 = Iadd v284, v283
+	v286:i32 = Icmp lt_u, v275, v285
+	ExitIfTrue v286, exec_ctx, memory_out_of_bounds
+	v287:i32 = Load v279, 0x28
+	v288:i64 = Iconst_64 0x4
+	v289:i64 = UExtend v287, 32->64
+	v290:i64 = Iadd v289, v288
+	v291:i32 = Icmp lt_u, v275, v290
+	ExitIfTrue v291, exec_ctx, memory_out_of_bounds
+	v292:i64 = Iadd v278, v289
+	v293:i32 = Load v292, 0x0
+	v294:i32 = Iconst_32 0x34
+	v295:i32 = Iadd v293, v294
+	v296:i32 = Call f3131:sig3, exec_ctx, module_ctx, v282, v295
+	v297:i64 = Load module_ctx, 0x8
+	v298:i64 = Uload32 module_ctx, 0x10
+	v299:i32 = Load module_ctx, 0x4e0
+	v300:i32 = Load module_ctx, 0x4f0
+	v301:i64 = Iconst_64 0x14
+	v302:i64 = UExtend v2, 32->64
+	v303:i64 = Iadd v302, v301
+	v304:i32 = Icmp lt_u, v298, v303
+	ExitIfTrue v304, exec_ctx, memory_out_of_bounds
+	v305:i64 = Iadd v297, v302
+	v306:i32 = Load v305, 0x10
+	v307:i32 = Iconst_32 0x0
+	v308:i32 = Iconst_32 0x0
+	Call f4136:sig6, exec_ctx, module_ctx, v306, v307, v308
+	v309:i64 = Load module_ctx, 0x8
+	v310:i64 = Uload32 module_ctx, 0x10
+	v311:i32 = Load module_ctx, 0x4e0
+	v312:i32 = Load module_ctx, 0x4f0
+	v313:i64 = Iconst_64 0xc
+	v314:i64 = UExtend v2, 32->64
+	v315:i64 = Iadd v314, v313
+	v316:i32 = Icmp lt_u, v310, v315
+	ExitIfTrue v316, exec_ctx, memory_out_of_bounds
+	v317:i64 = Iadd v309, v314
+	v318:i32 = Load v317, 0x8
+	Call f2117:sig0, exec_ctx, module_ctx, v318
+	v319:i64 = Load module_ctx, 0x8
+	v320:i64 = Uload32 module_ctx, 0x10
+	v321:i32 = Load module_ctx, 0x4e0
+	v322:i32 = Load module_ctx, 0x4f0
+	v328:i32 = Iconst_32 0x18
+	v329:i32 = Iadd v323, v328
+	v330:i64 = Iconst_64 0x2c
+	v331:i64 = UExtend v2, 32->64
+	v332:i64 = Iadd v331, v330
+	v333:i32 = Icmp lt_u, v320, v332
+	ExitIfTrue v333, exec_ctx, memory_out_of_bounds
+	v334:i64 = Iadd v319, v331
+	v335:i32 = Load v334, 0x28
+	v336:i32 = Iconst_32 0x4
+	v337:i32 = Iadd v335, v336
+	Call f2026:sig2, exec_ctx, module_ctx, v329, v337
+	v338:i64 = Load module_ctx, 0x8
+	v339:i64 = Uload32 module_ctx, 0x10
+	v340:i32 = Load module_ctx, 0x4e0
+	v341:i32 = Load module_ctx, 0x4f0
+	v342:i32 = Iconst_32 0x30
+	v343:i32 = Iadd v323, v342
+	v344:i32 = Iconst_32 0x18
+	v345:i32 = Iadd v323, v344
+	v346:i32 = Iconst_32 0x8
+	v347:i32 = Iadd v323, v346
+	v348:i64 = Iconst_64 0xc
+	v349:i64 = UExtend v2, 32->64
+	v350:i64 = Iadd v349, v348
+	v351:i32 = Icmp lt_u, v339, v350
+	ExitIfTrue v351, exec_ctx, memory_out_of_bounds
+	v352:i64 = Iadd v338, v349
+	v353:i32 = Load v352, 0x8
+	v354:i32 = Iconst_32 0x1c
+	v355:i32 = Iadd v353, v354
+	v356:i32 = Call f2009:sig3, exec_ctx, module_ctx, v347, v355
+	v357:i64 = Load module_ctx, 0x8
+	v358:i64 = Uload32 module_ctx, 0x10
+	v359:i32 = Load module_ctx, 0x4e0
+	v360:i32 = Load module_ctx, 0x4f0
+	Call f2032:sig6, exec_ctx, module_ctx, v343, v345, v356
+	v361:i64 = Load module_ctx, 0x8
+	v362:i64 = Uload32 module_ctx, 0x10
+	v363:i32 = Load module_ctx, 0x4e0
+	v364:i32 = Load module_ctx, 0x4f0
+	v370:i64 = Iconst_64 0x40
+	v371:i64 = UExtend v323, 32->64
+	v372:i64 = Iadd v371, v370
+	v373:i32 = Icmp lt_u, v362, v372
+	ExitIfTrue v373, exec_ctx, memory_out_of_bounds
+	v374:i64 = Iadd v361, v371
+	v375:i64 = Load v374, 0x38
+	v376:i64 = Iconst_64 0x10
+	v377:i64 = UExtend v365, 32->64
+	v378:i64 = Iadd v377, v376
+	v379:i32 = Icmp lt_u, v362, v378
+	ExitIfTrue v379, exec_ctx, memory_out_of_bounds
+	v380:i64 = Iadd v361, v377
+	Store v375, v380, 0x8
+	v381:i64 = Load v374, 0x30
+	Store v381, v380, 0x0
+	v382:i64 = Iconst_64 0x2c
+	v383:i64 = UExtend v2, 32->64
+	v384:i64 = Iadd v383, v382
+	v385:i32 = Icmp lt_u, v362, v384
+	ExitIfTrue v385, exec_ctx, memory_out_of_bounds
+	v386:i64 = Iadd v361, v383
+	v387:i32 = Load v386, 0x28
+	Jump blk8, v387, v271, v365, v1454, v323
+
+blk19: () <-- (blk17)
+	v164:i64 = Iconst_64 0x14
+	v165:i64 = UExtend v2, 32->64
+	v166:i64 = Iadd v165, v164
+	v167:i32 = Icmp lt_u, v156, v166
+	ExitIfTrue v167, exec_ctx, memory_out_of_bounds
+	v168:i32 = Load v160, 0x10
+	v169:i64 = Iconst_64 0x2
+	v170:i64 = UExtend v161, 32->64
+	v171:i64 = Iadd v170, v169
+	v172:i32 = Icmp lt_u, v156, v171
+	ExitIfTrue v172, exec_ctx, memory_out_of_bounds
+	v173:i64 = Iadd v159, v170
+	v174:i32 = Uload16 v173, 0x0
+	v175:i64 = Iconst_64 0x2
+	v176:i64 = UExtend v168, 32->64
+	v177:i64 = Iadd v176, v175
+	v178:i32 = Icmp lt_u, v156, v177
+	ExitIfTrue v178, exec_ctx, memory_out_of_bounds
+	v179:i64 = Iadd v159, v176
+	Istore16 v174, v179, 0x0
+	v180:i32 = Iconst_32 0x2
+	v181:i32 = Iadd v168, v180
+	v182:i32 = Iconst_32 0x2
+	v183:i32 = Iadd v161, v182
+	Call f4087:sig2, exec_ctx, module_ctx, v181, v183
+	v184:i64 = Load module_ctx, 0x8
+	v185:i64 = Uload32 module_ctx, 0x10
+	v186:i32 = Load module_ctx, 0x4e0
+	v187:i32 = Load module_ctx, 0x4f0
+	v188:i64 = Iconst_64 0x1c
+	v189:i64 = UExtend v161, 32->64
+	v190:i64 = Iadd v189, v188
+	v191:i32 = Icmp lt_u, v185, v190
+	ExitIfTrue v191, exec_ctx, memory_out_of_bounds
+	v192:i64 = Iadd v184, v189
+	v193:i64 = Load v192, 0x14
+	v194:i64 = Iconst_64 0x1c
+	v195:i64 = UExtend v168, 32->64
+	v196:i64 = Iadd v195, v194
+	v197:i32 = Icmp lt_u, v185, v196
+	ExitIfTrue v197, exec_ctx, memory_out_of_bounds
+	v198:i64 = Iadd v184, v195
+	Store v193, v198, 0x14
+	v199:i64 = Load v192, 0xc
+	Store v199, v198, 0xc
+	v200:i64 = Iconst_64 0x20
+	v201:i64 = UExtend v168, 32->64
+	v202:i64 = Iadd v201, v200
+	v203:i32 = Icmp lt_u, v185, v202
+	ExitIfTrue v203, exec_ctx, memory_out_of_bounds
+	v204:i32 = Load v198, 0x1c
+	v205:i64 = Iconst_64 0x20
+	v206:i64 = UExtend v161, 32->64
+	v207:i64 = Iadd v206, v205
+	v208:i32 = Icmp lt_u, v185, v207
+	ExitIfTrue v208, exec_ctx, memory_out_of_bounds
+	v209:i32 = Load v192, 0x1c
+	v210:i32 = Icmp eq, v204, v209
+	Brnz v210, blk18, v153, v324, v366, v1455
+	Jump blk20
+
+blk20: () <-- (blk19)
+	Brz v209, blk22
+	Jump blk21
+
+blk21: () <-- (blk20)
+	v211:i64 = Iconst_64 0x8
+	v212:i64 = UExtend v209, 32->64
+	v213:i64 = Iadd v212, v211
+	v214:i32 = Icmp lt_u, v185, v213
+	ExitIfTrue v214, exec_ctx, memory_out_of_bounds
+	v215:i64 = Iadd v184, v212
+	v216:i32 = Load v215, 0x4
+	v217:i32 = Iconst_32 0x1
+	v218:i32 = Iadd v216, v217
+	Store v218, v215, 0x4
+	v219:i32 = Iconst_32 0x0
+	v220:i32 = Icmp eq, v218, v219
+	Brnz v220, blk1
+	Jump blk24
+
+blk22: () <-- (blk20)
+	Jump blk23, v168, v209, v204, v153, v324, v366, v1455
+
+blk23: (v222:i32,v223:i32,v231:i32,v272:i32,v327:i32,v369:i32,v1457:i32) <-- (blk24,blk22)
+	v224:i64 = Iconst_64 0x20
+	v225:i64 = UExtend v222, 32->64
+	v226:i64 = Uload32 module_ctx, 0x10
+	v227:i64 = Iadd v225, v224
+	v228:i32 = Icmp lt_u, v226, v227
+	ExitIfTrue v228, exec_ctx, memory_out_of_bounds
+	v229:i64 = Load module_ctx, 0x8
+	v230:i64 = Iadd v229, v225
+	Store v223, v230, 0x1c
+	v232:i32 = Iconst_32 0x0
+	v233:i32 = Icmp eq, v231, v232
+	Brnz v233, blk18, v272, v327, v369, v1457
+	Jump blk25
+
+blk24: () <-- (blk21)
+	v221:i32 = Load v198, 0x1c
+	Jump blk23, v168, v209, v221, v153, v324, v366, v1455
+
+blk25: () <-- (blk23)
+	v234:i64 = Iconst_64 0x8
+	v235:i64 = UExtend v231, 32->64
+	v236:i64 = Iadd v235, v234
+	v237:i32 = Icmp lt_u, v226, v236
+	ExitIfTrue v237, exec_ctx, memory_out_of_bounds
+	v238:i64 = Iadd v229, v235
+	v239:i32 = Load v238, 0x4
+	v240:i32 = Iconst_32 0x0
+	v241:i32 = Icmp eq, v239, v240
+	Brnz v241, blk1
+	Jump blk26
+
+blk26: () <-- (blk25)
+	v242:i32 = Iconst_32 0x1
+	v243:i32 = Isub v239, v242
+	Store v243, v238, 0x4
+	Brnz v243, blk18, v272, v327, v369, v1457
+	Jump blk27
+
+blk27: () <-- (blk26)
+	v244:i32 = Load v238, 0x0
+	v245:i64 = Iconst_64 0x8
+	v246:i64 = UExtend v244, 32->64
+	v247:i64 = Iadd v246, v245
+	v248:i32 = Icmp lt_u, v226, v247
+	ExitIfTrue v248, exec_ctx, memory_out_of_bounds
+	v249:i64 = Iadd v229, v246
+	v250:i32 = Load v249, 0x4
+	v251:i64 = Load module_ctx, 0x508
+	v252:i32 = Load v251, 0x8
+	v253:i32 = Icmp ge_u, v250, v252
+	ExitIfTrue v253, exec_ctx, table_out_of_bounds
+	v254:i64 = Load v251, 0x0
+	v255:i64 = Iconst_64 0x3
+	v256:i32 = Ishl v250, v255
+	v257:i64 = Iadd v254, v256
+	v258:i64 = Load v257, 0x0
+	v259:i64 = Iconst_64 0x0
+	v260:i32 = Icmp eq, v258, v259
+	ExitIfTrue v260, exec_ctx, indirect_call_null_pointer
+	v261:i32 = Load v258, 0x10
+	v262:i64 = Load module_ctx, 0x500
+	v263:i32 = Load v262, 0x0
+	v264:i32 = Icmp neq, v261, v263
+	ExitIfTrue v264, exec_ctx, indirect_call_type_mismatch
+	v265:i64 = Load v258, 0x0
+	v266:i64 = Load v258, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	CallIndirect v265:sig0, exec_ctx, v266, v231
+	v267:i64 = Load module_ctx, 0x8
+	v268:i64 = Uload32 module_ctx, 0x10
+	v269:i32 = Load module_ctx, 0x4e0
+	v270:i32 = Load module_ctx, 0x4f0
+	Jump blk18, v272, v327, v369, v1457
+
+blk28: (v1424:i32,v1425:i32,v1427:i32,v1431:i32,v1449:i32,v1451:i32,v1468:i32) <-- (blk34,blk36,blk38,blk29)
+	v494:i32 = Iconst_32 0x64
+	v495:i32 = Iconst_32 0x0
+	Jump blk39, v1424, v1425, v1427, v1431, v1449, v495, v1451, v494, v1468
+
+blk29: () <-- (blk33)
+	v478:i32 = Iconst_32 0x8
+	v479:i32 = Ushr v401, v478
+	v480:i32 = Iconst_32 0xfffffc
+	v481:i32 = Band v479, v480
+	v482:i32 = Iadd v402, v481
+	v483:i64 = Iconst_64 0x4
+	v484:i64 = UExtend v482, 32->64
+	v485:i64 = Iadd v484, v483
+	v486:i32 = Icmp lt_u, v390, v485
+	ExitIfTrue v486, exec_ctx, memory_out_of_bounds
+	v487:i64 = Iadd v393, v484
+	v488:i32 = Load v487, 0x0
+	v489:i32 = Iconst_32 0x3ff
+	v490:i32 = Band v401, v489
+	v491:i32 = Iconst_32 0x2
+	v492:i32 = Ishl v490, v491
+	v493:i32 = Iadd v488, v492
+	Jump blk28, v493, v447, v406, v1432, v482, v1452, v1469
+
+blk30: (v449:i32,v452:i32,v1426:i32,v1433:i32,v1458:i32,v1470:i32) <-- (blk31,blk35)
+	v450:i32 = Iconst_32 0x4
+	v451:i32 = Iadd v449, v450
+	v453:i64 = Iconst_64 0x30
+	v454:i64 = UExtend v2, 32->64
+	v455:i64 = Uload32 module_ctx, 0x10
+	v456:i64 = Iadd v454, v453
+	v457:i32 = Icmp lt_u, v455, v456
+	ExitIfTrue v457, exec_ctx, memory_out_of_bounds
+	v458:i64 = Load module_ctx, 0x8
+	v459:i64 = Iadd v458, v454
+	v460:i32 = Load v459, 0x2c
+	v461:i64 = Iconst_64 0x4
+	v462:i64 = UExtend v460, 32->64
+	v463:i64 = Iadd v462, v461
+	v464:i32 = Icmp lt_u, v455, v463
+	ExitIfTrue v464, exec_ctx, memory_out_of_bounds
+	v465:i64 = Iadd v458, v462
+	v466:i32 = Load v465, 0x0
+	v467:i32 = Isub v451, v466
+	v468:i32 = Iconst_32 0x1000
+	v469:i32 = Icmp neq, v467, v468
+	Brz v469, blk37
+	Jump blk36
+
+blk31: () <-- (blk8)
+	v405:i32 = Iconst_32 0x0
+	v407:i64 = Iconst_64 0x34
+	v408:i64 = UExtend v2, 32->64
+	v409:i64 = Iadd v408, v407
+	v410:i32 = Icmp lt_u, v390, v409
+	ExitIfTrue v410, exec_ctx, memory_out_of_bounds
+	v411:i64 = Iadd v393, v408
+	v412:i32 = Load v411, 0x30
+	Brnz v412, blk30, v412, v406, v405, v1432, v1452, v1469
+	Jump blk34
+
+blk32: () <-- (blk8)
+	Jump blk33
+
+blk33: () <-- (blk32)
+	v419:i64 = Iconst_64 0x34
+	v420:i64 = UExtend v2, 32->64
+	v421:i64 = Iadd v420, v419
+	v422:i32 = Icmp lt_u, v390, v421
+	ExitIfTrue v422, exec_ctx, memory_out_of_bounds
+	v423:i64 = Iadd v393, v420
+	v424:i32 = Load v423, 0x30
+	v425:i64 = Iconst_64 0x68
+	v426:i64 = UExtend v395, 32->64
+	v427:i64 = Iadd v426, v425
+	v428:i32 = Icmp lt_u, v390, v427
+	ExitIfTrue v428, exec_ctx, memory_out_of_bounds
+	v429:i64 = Iadd v393, v426
+	v430:i32 = Load v429, 0x64
+	v431:i32 = Iadd v430, v401
+	v432:i32 = Iconst_32 0x8
+	v433:i32 = Ushr v431, v432
+	v434:i32 = Iconst_32 0xfffffc
+	v435:i32 = Band v433, v434
+	v436:i32 = Iadd v402, v435
+	v437:i64 = Iconst_64 0x4
+	v438:i64 = UExtend v436, 32->64
+	v439:i64 = Iadd v438, v437
+	v440:i32 = Icmp lt_u, v390, v439
+	ExitIfTrue v440, exec_ctx, memory_out_of_bounds
+	v441:i64 = Iadd v393, v438
+	v442:i32 = Load v441, 0x0
+	v443:i32 = Iconst_32 0x3ff
+	v444:i32 = Band v431, v443
+	v445:i32 = Iconst_32 0x2
+	v446:i32 = Ishl v444, v445
+	v447:i32 = Iadd v442, v446
+	v448:i32 = Icmp eq, v424, v447
+	Brnz v448, blk29
+	Jump blk35
+
+blk34: () <-- (blk31)
+	v413:i32 = Iconst_32 0x8
+	v414:i32 = Ushr v401, v413
+	v415:i32 = Iconst_32 0xfffffc
+	v416:i32 = Band v414, v415
+	v417:i32 = Iadd v402, v416
+	v418:i32 = Iconst_32 0x0
+	Jump blk28, v418, v405, v406, v1432, v417, v1452, v1469
+
+blk35: () <-- (blk33)
+	Jump blk30, v424, v406, v447, v1432, v1452, v1469
+
+blk36: () <-- (blk30)
+	Jump blk28, v451, v1426, v452, v1433, v460, v1458, v1470
+
+blk37: () <-- (blk30)
+	Jump blk38
+
+blk38: () <-- (blk37)
+	v470:i32 = Iconst_32 0x4
+	v471:i32 = Iadd v460, v470
+	v472:i64 = Iconst_64 0x8
+	v473:i64 = UExtend v460, 32->64
+	v474:i64 = Iadd v473, v472
+	v475:i32 = Icmp lt_u, v455, v474
+	ExitIfTrue v475, exec_ctx, memory_out_of_bounds
+	v476:i64 = Iadd v458, v473
+	v477:i32 = Load v476, 0x4
+	Jump blk28, v477, v1426, v452, v1433, v471, v1458, v1470
+
+blk39: (v496:i32,v497:i32,v515:i32,v530:i32,v705:i32,v784:i32,v788:i32,v1316:i32,v1467:i32) <-- (blk28,blk119)
+	v498:i32 = Icmp neq, v496, v497
+	Brz v498, blk44
+	Jump blk43
+
+blk40: () <-- (blk120)
+	Jump blk5
+
+blk41: (v1366:i32,v1370:i32,v1391:i32,v1406:i32,v1429:i32,v1435:i32,v1460:i32,v1463:i32,v1472:i32) <-- (blk46,blk113,blk108,blk114,blk116)
+	v1368:i32 = Iconst_32 0x4
+	v1369:i32 = Iadd v1366, v1368
+	v1372:i64 = Iconst_64 0x4
+	v1373:i64 = UExtend v1370, 32->64
+	v1374:i64 = Uload32 module_ctx, 0x10
+	v1375:i64 = Iadd v1373, v1372
+	v1376:i32 = Icmp lt_u, v1374, v1375
+	ExitIfTrue v1376, exec_ctx, memory_out_of_bounds
+	v1377:i64 = Load module_ctx, 0x8
+	v1378:i64 = Iadd v1377, v1373
+	v1379:i32 = Load v1378, 0x0
+	v1380:i32 = Isub v1369, v1379
+	v1381:i32 = Iconst_32 0x1000
+	v1382:i32 = Icmp eq, v1380, v1381
+	Brz v1382, blk118
+	Jump blk117
+
+blk42: (v864:i32,v880:i32,v1079:i32,v1276:i32,v1293:i32,v1315:i32,v1397:i32,v1412:i32,v1441:i32,v1478:i32) <-- (blk51,blk52,blk59,blk58,blk55)
+	v865:i64 = Iconst_64 0x14
+	v866:i64 = UExtend v2, 32->64
+	v867:i64 = Uload32 module_ctx, 0x10
+	v868:i64 = Iadd v866, v865
+	v869:i32 = Icmp lt_u, v867, v868
+	ExitIfTrue v869, exec_ctx, memory_out_of_bounds
+	v870:i64 = Load module_ctx, 0x8
+	v871:i64 = Iadd v870, v866
+	v872:i32 = Load v871, 0x10
+	v873:i64 = Iconst_64 0x2c
+	v874:i64 = UExtend v2, 32->64
+	v875:i64 = Iadd v874, v873
+	v876:i32 = Icmp lt_u, v867, v875
+	ExitIfTrue v876, exec_ctx, memory_out_of_bounds
+	v877:i32 = Load v871, 0x28
+	v878:i32 = Iconst_32 0x4
+	v879:i32 = Iadd v877, v878
+	v881:i32 = Iconst_32 0x4
+	v882:i32 = Iadd v880, v881
+	Jump blk78, v872, v1079, v880, v879, v882, v864, v1276, v1293, v1315, v1397, v1412, v1441, v1478
+
+blk43: () <-- (blk39)
+	v499:i64 = Iconst_64 0x4
+	v500:i64 = UExtend v496, 32->64
+	v501:i64 = Uload32 module_ctx, 0x10
+	v502:i64 = Iadd v500, v499
+	v503:i32 = Icmp lt_u, v501, v502
+	ExitIfTrue v503, exec_ctx, memory_out_of_bounds
+	v504:i64 = Load module_ctx, 0x8
+	v505:i64 = Iadd v504, v500
+	v506:i32 = Load v505, 0x0
+	v507:i32 = Iconst_32 0x0
+	v508:i32 = Icmp eq, v506, v507
+	Brnz v508, blk46, v515, v496, v705, v784, v497, v530, v788, v1316, v1467
+	Jump blk47
+
+blk44: () <-- (blk39)
+	Jump blk45
+
+blk45: () <-- (blk44)
+	v727:i64 = Iconst_64 0x2c
+	v728:i64 = UExtend v2, 32->64
+	v729:i64 = Uload32 module_ctx, 0x10
+	v730:i64 = Iadd v728, v727
+	v731:i32 = Icmp lt_u, v729, v730
+	ExitIfTrue v731, exec_ctx, memory_out_of_bounds
+	v732:i64 = Load module_ctx, 0x8
+	v733:i64 = Iadd v732, v728
+	v734:i32 = Load v733, 0x28
+	v735:i64 = Iconst_64 0x4
+	v736:i64 = UExtend v734, 32->64
+	v737:i64 = Iadd v736, v735
+	v738:i32 = Icmp lt_u, v729, v737
+	ExitIfTrue v738, exec_ctx, memory_out_of_bounds
+	v739:i64 = Iadd v732, v736
+	v740:i32 = Load v739, 0x0
+	v741:i64 = Iconst_64 0x38
+	v742:i64 = UExtend v740, 32->64
+	v743:i64 = Iadd v742, v741
+	v744:i32 = Icmp lt_u, v729, v743
+	ExitIfTrue v744, exec_ctx, memory_out_of_bounds
+	v745:i64 = Iadd v732, v742
+	v746:i32 = Uload8 v745, 0x37
+	v747:i32 = Iconst_32 0x2
+	v748:i32 = Icmp eq, v746, v747
+	Brz v748, blk64
+	Jump blk63
+
+blk46: (v717:i32,v718:i32,v726:i32,v1392:i32,v1407:i32,v1436:i32,v1461:i32,v1464:i32,v1473:i32) <-- (blk43,blk47,blk48,blk49,blk50)
+	v719:i64 = Iconst_64 0x34
+	v720:i64 = UExtend v2, 32->64
+	v721:i64 = Uload32 module_ctx, 0x10
+	v722:i64 = Iadd v720, v719
+	v723:i32 = Icmp lt_u, v721, v722
+	ExitIfTrue v723, exec_ctx, memory_out_of_bounds
+	v724:i64 = Load module_ctx, 0x8
+	v725:i64 = Iadd v724, v720
+	Store v718, v725, 0x30
+	Store v726, v725, 0x2c
+	Jump blk41, v718, v726, v1392, v1407, v717, v1436, v1461, v1464, v1473
+
+blk47: () <-- (blk43)
+	v509:i64 = Iconst_64 0x1c
+	v510:i64 = UExtend v506, 32->64
+	v511:i64 = Iadd v510, v509
+	v512:i32 = Icmp lt_u, v501, v511
+	ExitIfTrue v512, exec_ctx, memory_out_of_bounds
+	v513:i64 = Iadd v504, v510
+	v514:f32 = Load v513, 0x18
+	v516:i64 = Iconst_64 0x20
+	v517:i64 = UExtend v2, 32->64
+	v518:i64 = Iadd v517, v516
+	v519:i32 = Icmp lt_u, v501, v518
+	ExitIfTrue v519, exec_ctx, memory_out_of_bounds
+	v520:i64 = Iadd v504, v517
+	v521:f32 = Load v520, 0x1c
+	v522:i32 = Fcmp le, v514, v521
+	v523:i32 = Iconst_32 0x0
+	v524:i32 = Icmp eq, v522, v523
+	Brnz v524, blk46, v515, v496, v705, v784, v497, v530, v788, v1316, v1467
+	Jump blk48
+
+blk48: () <-- (blk47)
+	v525:i64 = Iconst_64 0x24
+	v526:i64 = UExtend v506, 32->64
+	v527:i64 = Iadd v526, v525
+	v528:i32 = Icmp lt_u, v501, v527
+	ExitIfTrue v528, exec_ctx, memory_out_of_bounds
+	v529:f32 = Load v513, 0x20
+	v531:i64 = Iconst_64 0x4
+	v532:i64 = UExtend v530, 32->64
+	v533:i64 = Iadd v532, v531
+	v534:i32 = Icmp lt_u, v501, v533
+	ExitIfTrue v534, exec_ctx, memory_out_of_bounds
+	v535:i64 = Iadd v504, v532
+	v536:f32 = Load v535, 0x0
+	v537:i32 = Fcmp ge, v529, v536
+	v538:i32 = Iconst_32 0x0
+	v539:i32 = Icmp eq, v537, v538
+	Brnz v539, blk46, v515, v496, v705, v784, v497, v530, v788, v1316, v1467
+	Jump blk49
+
+blk49: () <-- (blk48)
+	v540:f32 = Load v513, 0x1c
+	v541:i64 = Iconst_64 0x24
+	v542:i64 = UExtend v2, 32->64
+	v543:i64 = Iadd v542, v541
+	v544:i32 = Icmp lt_u, v501, v543
+	ExitIfTrue v544, exec_ctx, memory_out_of_bounds
+	v545:f32 = Load v520, 0x20
+	v546:i32 = Fcmp le, v540, v545
+	v547:i32 = Iconst_32 0x0
+	v548:i32 = Icmp eq, v546, v547
+	Brnz v548, blk46, v515, v496, v705, v784, v497, v530, v788, v1316, v1467
+	Jump blk50
+
+blk50: () <-- (blk49)
+	v549:i64 = Iconst_64 0x28
+	v550:i64 = UExtend v506, 32->64
+	v551:i64 = Iadd v550, v549
+	v552:i32 = Icmp lt_u, v501, v551
+	ExitIfTrue v552, exec_ctx, memory_out_of_bounds
+	v553:f32 = Load v513, 0x24
+	v554:f32 = Load v520, 0x18
+	v555:i32 = Fcmp ge, v553, v554
+	v556:i32 = Iconst_32 0x0
+	v557:i32 = Icmp eq, v555, v556
+	Brnz v557, blk46, v515, v496, v705, v784, v497, v530, v788, v1316, v1467
+	Jump blk51
+
+blk51: () <-- (blk50)
+	v558:i32 = Load v520, 0xc
+	v559:i64 = Iconst_64 0x7
+	v560:i64 = UExtend v558, 32->64
+	v561:i64 = Iadd v560, v559
+	v562:i32 = Icmp lt_u, v501, v561
+	ExitIfTrue v562, exec_ctx, memory_out_of_bounds
+	v563:i64 = Iadd v504, v560
+	v564:i32 = Uload8 v563, 0x6
+	v565:i32 = Iconst_32 0x0
+	v566:i32 = Icmp eq, v564, v565
+	Brnz v566, blk42, v515, v506, v788, v496, v705, v1316, v784, v497, v530, v1467
+	Jump blk52
+
+blk52: () <-- (blk51)
+	v567:i32 = Load v513, 0x0
+	v568:i64 = Iconst_64 0x1c
+	v569:i64 = UExtend v567, 32->64
+	v570:i64 = Iadd v569, v568
+	v571:i32 = Icmp lt_u, v501, v570
+	ExitIfTrue v571, exec_ctx, memory_out_of_bounds
+	v572:i64 = Iadd v504, v569
+	v573:i32 = Load v572, 0x18
+	v574:i64 = Load module_ctx, 0x508
+	v575:i32 = Load v574, 0x8
+	v576:i32 = Icmp ge_u, v573, v575
+	ExitIfTrue v576, exec_ctx, table_out_of_bounds
+	v577:i64 = Load v574, 0x0
+	v578:i64 = Iconst_64 0x3
+	v579:i32 = Ishl v573, v578
+	v580:i64 = Iadd v577, v579
+	v581:i64 = Load v580, 0x0
+	v582:i64 = Iconst_64 0x0
+	v583:i32 = Icmp eq, v581, v582
+	ExitIfTrue v583, exec_ctx, indirect_call_null_pointer
+	v584:i32 = Load v581, 0x10
+	v585:i64 = Load module_ctx, 0x500
+	v586:i32 = Load v585, 0x4
+	v587:i32 = Icmp neq, v584, v586
+	ExitIfTrue v587, exec_ctx, indirect_call_type_mismatch
+	v588:i64 = Load v581, 0x0
+	v589:i64 = Load v581, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v590:i32 = CallIndirect v588:sig1, exec_ctx, v589, v506
+	v591:i64 = Load module_ctx, 0x8
+	v592:i64 = Uload32 module_ctx, 0x10
+	v593:i32 = Load module_ctx, 0x4e0
+	v594:i32 = Load module_ctx, 0x4f0
+	v595:i32 = Iconst_32 0x0
+	v596:i32 = Icmp eq, v590, v595
+	Brnz v596, blk42, v515, v506, v788, v496, v705, v1316, v784, v497, v530, v1467
+	Jump blk53
+
+blk53: () <-- (blk52)
+	v597:i64 = Iconst_64 0x4
+	v598:i64 = UExtend v506, 32->64
+	v599:i64 = Iadd v598, v597
+	v600:i32 = Icmp lt_u, v592, v599
+	ExitIfTrue v600, exec_ctx, memory_out_of_bounds
+	v601:i64 = Iadd v591, v598
+	v602:i32 = Load v601, 0x0
+	v603:i64 = Iconst_64 0x38
+	v604:i64 = UExtend v602, 32->64
+	v605:i64 = Iadd v604, v603
+	v606:i32 = Icmp lt_u, v592, v605
+	ExitIfTrue v606, exec_ctx, memory_out_of_bounds
+	v607:i64 = Iadd v591, v604
+	v608:i32 = Load v607, 0x34
+	v609:i64 = Load module_ctx, 0x508
+	v610:i32 = Load v609, 0x8
+	v611:i32 = Icmp ge_u, v608, v610
+	ExitIfTrue v611, exec_ctx, table_out_of_bounds
+	v612:i64 = Load v609, 0x0
+	v613:i64 = Iconst_64 0x3
+	v614:i32 = Ishl v608, v613
+	v615:i64 = Iadd v612, v614
+	v616:i64 = Load v615, 0x0
+	v617:i64 = Iconst_64 0x0
+	v618:i32 = Icmp eq, v616, v617
+	ExitIfTrue v618, exec_ctx, indirect_call_null_pointer
+	v619:i32 = Load v616, 0x10
+	v620:i64 = Load module_ctx, 0x500
+	v621:i32 = Load v620, 0x4
+	v622:i32 = Icmp neq, v619, v621
+	ExitIfTrue v622, exec_ctx, indirect_call_type_mismatch
+	v623:i64 = Load v616, 0x0
+	v624:i64 = Load v616, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v625:i32 = CallIndirect v623:sig1, exec_ctx, v624, v506
+	v626:i64 = Load module_ctx, 0x8
+	v627:i64 = Uload32 module_ctx, 0x10
+	v628:i32 = Load module_ctx, 0x4e0
+	v629:i32 = Load module_ctx, 0x4f0
+	v630:i32 = Call f3754:sig1, exec_ctx, module_ctx, v625
+	v631:i64 = Load module_ctx, 0x8
+	v632:i64 = Uload32 module_ctx, 0x10
+	v633:i32 = Load module_ctx, 0x4e0
+	v634:i32 = Load module_ctx, 0x4f0
+	v635:i64 = Iconst_64 0x8
+	v636:i64 = UExtend v630, 32->64
+	v637:i64 = Iadd v636, v635
+	v638:i32 = Icmp lt_u, v632, v637
+	ExitIfTrue v638, exec_ctx, memory_out_of_bounds
+	v639:i64 = Iadd v631, v636
+	v640:i32 = Load v639, 0x4
+	v641:i32 = Iconst_32 0x0
+	v642:i32 = Icmp eq, v640, v641
+	Brnz v642, blk1
+	Jump blk54
+
+blk54: () <-- (blk53)
+	v643:i64 = Iconst_64 0x16
+	v644:i64 = UExtend v630, 32->64
+	v645:i64 = Iadd v644, v643
+	v646:i32 = Icmp lt_u, v632, v645
+	ExitIfTrue v646, exec_ctx, memory_out_of_bounds
+	v647:i32 = Uload8 v639, 0x15
+	v648:i32 = Iconst_32 0x1
+	v649:i32 = Isub v640, v648
+	Store v649, v639, 0x4
+	v650:i32 = Iconst_32 0x0
+	v651:i32 = Icmp eq, v649, v650
+	Brz v651, blk57
+	Jump blk56
+
+blk55: (v682:i32,v699:i32,v704:i32,v707:i32,v1080:i32,v1317:i32,v1413:i32,v1442:i32,v1479:i32) <-- (blk56,blk60)
+	v681:i32 = Iconst_32 0x1
+	v683:i64 = Iconst_64 0xc
+	v684:i64 = UExtend v2, 32->64
+	v685:i64 = Uload32 module_ctx, 0x10
+	v686:i64 = Iadd v684, v683
+	v687:i32 = Icmp lt_u, v685, v686
+	ExitIfTrue v687, exec_ctx, memory_out_of_bounds
+	v688:i64 = Load module_ctx, 0x8
+	v689:i64 = Iadd v688, v684
+	v690:i32 = Load v689, 0x8
+	v691:i64 = Iconst_64 0x19
+	v692:i64 = UExtend v690, 32->64
+	v693:i64 = Iadd v692, v691
+	v694:i32 = Icmp lt_u, v685, v693
+	ExitIfTrue v694, exec_ctx, memory_out_of_bounds
+	v695:i64 = Iadd v688, v692
+	v696:i32 = Uload8 v695, 0x18
+	v697:i32 = Iconst_32 0x0
+	v698:i32 = Icmp eq, v696, v697
+	Brnz v698, blk42, v682, v707, v1080, v699, v704, v1317, v681, v1413, v1442, v1479
+	Jump blk61
+
+blk56: () <-- (blk54)
+	v652:i32 = Load v639, 0x0
+	v653:i64 = Iconst_64 0x8
+	v654:i64 = UExtend v652, 32->64
+	v655:i64 = Iadd v654, v653
+	v656:i32 = Icmp lt_u, v632, v655
+	ExitIfTrue v656, exec_ctx, memory_out_of_bounds
+	v657:i64 = Iadd v631, v654
+	v658:i32 = Load v657, 0x4
+	v659:i64 = Load module_ctx, 0x508
+	v660:i32 = Load v659, 0x8
+	v661:i32 = Icmp ge_u, v658, v660
+	ExitIfTrue v661, exec_ctx, table_out_of_bounds
+	v662:i64 = Load v659, 0x0
+	v663:i64 = Iconst_64 0x3
+	v664:i32 = Ishl v658, v663
+	v665:i64 = Iadd v662, v664
+	v666:i64 = Load v665, 0x0
+	v667:i64 = Iconst_64 0x0
+	v668:i32 = Icmp eq, v666, v667
+	ExitIfTrue v668, exec_ctx, indirect_call_null_pointer
+	v669:i32 = Load v666, 0x10
+	v670:i64 = Load module_ctx, 0x500
+	v671:i32 = Load v670, 0x0
+	v672:i32 = Icmp neq, v669, v671
+	ExitIfTrue v672, exec_ctx, indirect_call_type_mismatch
+	v673:i64 = Load v666, 0x0
+	v674:i64 = Load v666, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	CallIndirect v673:sig0, exec_ctx, v674, v630
+	v675:i64 = Load module_ctx, 0x8
+	v676:i64 = Uload32 module_ctx, 0x10
+	v677:i32 = Load module_ctx, 0x4e0
+	v678:i32 = Load module_ctx, 0x4f0
+	Brnz v647, blk55, v515, v496, v705, v506, v788, v1316, v497, v530, v1467
+	Jump blk59
+
+blk57: () <-- (blk54)
+	Jump blk58
+
+blk58: () <-- (blk57)
+	v679:i32 = Iconst_32 0x0
+	v680:i32 = Icmp eq, v647, v679
+	Brnz v680, blk42, v515, v506, v788, v496, v705, v1316, v784, v497, v530, v1467
+	Jump blk60
+
+blk59: () <-- (blk56)
+	Jump blk42, v515, v506, v788, v496, v705, v1316, v784, v497, v530, v1467
+
+blk60: () <-- (blk58)
+	Jump blk55, v515, v496, v705, v506, v788, v1316, v497, v530, v1467
+
+blk61: () <-- (blk55)
+	v700:i64 = Iconst_64 0x34
+	v701:i64 = UExtend v2, 32->64
+	v702:i64 = Iadd v701, v700
+	v703:i32 = Icmp lt_u, v685, v702
+	ExitIfTrue v703, exec_ctx, memory_out_of_bounds
+	Store v699, v689, 0x30
+	Store v704, v689, 0x2c
+	v706:i32 = Load v689, 0x10
+	v708:i32 = Iconst_32 0x4
+	v709:i32 = Iadd v707, v708
+	v710:i32 = Load v689, 0x28
+	v711:i32 = Iconst_32 0x4
+	v712:i32 = Iadd v710, v711
+	Call f4138:sig6, exec_ctx, module_ctx, v706, v709, v712
+	v713:i64 = Load module_ctx, 0x8
+	v714:i64 = Uload32 module_ctx, 0x10
+	v715:i32 = Load module_ctx, 0x4e0
+	v716:i32 = Load module_ctx, 0x4f0
+	Jump blk2, v1479
+
+blk62: (v852:i32,v1465:i32,v1486:i32,v1488:i32) <-- (blk69,blk70,blk73)
+	v853:i64 = Iconst_64 0x4
+	v854:i64 = UExtend v2, 32->64
+	v855:i64 = Uload32 module_ctx, 0x10
+	v856:i64 = Iadd v854, v853
+	v857:i32 = Icmp lt_u, v855, v856
+	ExitIfTrue v857, exec_ctx, memory_out_of_bounds
+	v858:i64 = Load module_ctx, 0x8
+	v859:i64 = Iadd v858, v854
+	v860:i32 = Load v859, 0x0
+	v861:i32 = Iconst_32 0x1
+	v862:i32 = Icmp eq, v860, v861
+	Brnz v862, blk4, v852, v1465, v1486, v1488
+	Jump blk74
+
+blk63: () <-- (blk45)
+	v749:i32 = Load v733, 0x10
+	v750:i32 = Iconst_32 0x0
+	Store v750, v733, 0x10
+	Brz v749, blk67
+	Jump blk66
+
+blk64: () <-- (blk45)
+	Jump blk65
+
+blk65: () <-- (blk64)
+	v826:i32 = Iconst_32 0x1
+	v827:i32 = Band v784, v826
+	Brnz v827, blk2, v1467
+	Jump blk72
+
+blk66: () <-- (blk63)
+	v751:i32 = Call f4135:sig1, exec_ctx, module_ctx, v749
+	v752:i64 = Load module_ctx, 0x8
+	v753:i64 = Uload32 module_ctx, 0x10
+	v754:i32 = Load module_ctx, 0x4e0
+	v755:i32 = Load module_ctx, 0x4f0
+	Call f76:sig0, exec_ctx, module_ctx, v751
+	v756:i64 = Load module_ctx, 0x8
+	v757:i64 = Uload32 module_ctx, 0x10
+	v758:i32 = Load module_ctx, 0x4e0
+	v759:i32 = Load module_ctx, 0x4f0
+	Jump blk68, v515, v784, v788, v1467, v530
+
+blk67: () <-- (blk63)
+	Jump blk68, v515, v784, v788, v1467, v530
+
+blk68: (v760:i32,v783:i32,v787:i32,v1466:i32,v1487:i32) <-- (blk66,blk67)
+	v761:i64 = Iconst_64 0xc
+	v762:i64 = UExtend v2, 32->64
+	v763:i64 = Uload32 module_ctx, 0x10
+	v764:i64 = Iadd v762, v761
+	v765:i32 = Icmp lt_u, v763, v764
+	ExitIfTrue v765, exec_ctx, memory_out_of_bounds
+	v766:i64 = Load module_ctx, 0x8
+	v767:i64 = Iadd v766, v762
+	v768:i32 = Load v767, 0x8
+	v769:i32 = Iconst_32 0x0
+	Call f2114:sig2, exec_ctx, module_ctx, v768, v769
+	v770:i64 = Load module_ctx, 0x8
+	v771:i64 = Uload32 module_ctx, 0x10
+	v772:i32 = Load module_ctx, 0x4e0
+	v773:i32 = Load module_ctx, 0x4f0
+	v774:i32 = Iconst_32 0x0
+	v775:i64 = Iconst_64 0x2c
+	v776:i64 = UExtend v2, 32->64
+	v777:i64 = Iadd v776, v775
+	v778:i32 = Icmp lt_u, v771, v777
+	ExitIfTrue v778, exec_ctx, memory_out_of_bounds
+	v779:i64 = Iadd v770, v776
+	Store v774, v779, 0x28
+	v780:i32 = Load v779, 0x24
+	v781:i32 = Iconst_32 0x1
+	v782:i32 = Iadd v780, v781
+	Store v782, v779, 0x24
+	v785:i32 = Iconst_32 0x1
+	v786:i32 = Band v783, v785
+	Brnz v786, blk2, v1466
+	Jump blk69
+
+blk69: () <-- (blk68)
+	v789:i32 = Iconst_32 0x0
+	v790:i32 = Icmp eq, v787, v789
+	Brnz v790, blk62, v760, v1466, v1487, v787
+	Jump blk70
+
+blk70: () <-- (blk69)
+	v791:i64 = Iconst_64 0x4
+	v792:i64 = UExtend v787, 32->64
+	v793:i64 = Iadd v792, v791
+	v794:i32 = Icmp lt_u, v771, v793
+	ExitIfTrue v794, exec_ctx, memory_out_of_bounds
+	v795:i64 = Iadd v770, v792
+	v796:i32 = Load v795, 0x0
+	v797:i64 = Iconst_64 0xc
+	v798:i64 = UExtend v796, 32->64
+	v799:i64 = Iadd v798, v797
+	v800:i32 = Icmp lt_u, v771, v799
+	ExitIfTrue v800, exec_ctx, memory_out_of_bounds
+	v801:i64 = Iadd v770, v798
+	v802:i32 = Load v801, 0x8
+	v803:i64 = Load module_ctx, 0x508
+	v804:i32 = Load v803, 0x8
+	v805:i32 = Icmp ge_u, v802, v804
+	ExitIfTrue v805, exec_ctx, table_out_of_bounds
+	v806:i64 = Load v803, 0x0
+	v807:i64 = Iconst_64 0x3
+	v808:i32 = Ishl v802, v807
+	v809:i64 = Iadd v806, v808
+	v810:i64 = Load v809, 0x0
+	v811:i64 = Iconst_64 0x0
+	v812:i32 = Icmp eq, v810, v811
+	ExitIfTrue v812, exec_ctx, indirect_call_null_pointer
+	v813:i32 = Load v810, 0x10
+	v814:i64 = Load module_ctx, 0x500
+	v815:i32 = Load v814, 0x4
+	v816:i32 = Icmp neq, v813, v815
+	ExitIfTrue v816, exec_ctx, indirect_call_type_mismatch
+	v817:i64 = Load v810, 0x0
+	v818:i64 = Load v810, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v819:i32 = CallIndirect v817:sig1, exec_ctx, v818, v787
+	v820:i64 = Load module_ctx, 0x8
+	v821:i64 = Uload32 module_ctx, 0x10
+	v822:i32 = Load module_ctx, 0x4e0
+	v823:i32 = Load module_ctx, 0x4f0
+	v824:i32 = Iconst_32 0x0
+	v825:i32 = Icmp eq, v819, v824
+	Brnz v825, blk62, v760, v1466, v1487, v787
+	Jump blk71
+
+blk71: () <-- (blk70)
+	Jump blk2, v1466
+
+blk72: () <-- (blk65)
+	Call f3884:sig2, exec_ctx, module_ctx, v740, v788
+	v828:i64 = Load module_ctx, 0x8
+	v829:i64 = Uload32 module_ctx, 0x10
+	v830:i32 = Load module_ctx, 0x4e0
+	v831:i32 = Load module_ctx, 0x4f0
+	v832:i64 = Iconst_64 0x2c
+	v833:i64 = UExtend v2, 32->64
+	v834:i64 = Iadd v833, v832
+	v835:i32 = Icmp lt_u, v829, v834
+	ExitIfTrue v835, exec_ctx, memory_out_of_bounds
+	v836:i64 = Iadd v828, v833
+	v837:i32 = Load v836, 0x28
+	v838:i64 = Iconst_64 0x4
+	v839:i64 = UExtend v837, 32->64
+	v840:i64 = Iadd v839, v838
+	v841:i32 = Icmp lt_u, v829, v840
+	ExitIfTrue v841, exec_ctx, memory_out_of_bounds
+	v842:i64 = Iadd v828, v839
+	v843:i32 = Load v842, 0x0
+	v844:i64 = Iconst_64 0x38
+	v845:i64 = UExtend v843, 32->64
+	v846:i64 = Iadd v845, v844
+	v847:i32 = Icmp lt_u, v829, v846
+	ExitIfTrue v847, exec_ctx, memory_out_of_bounds
+	v848:i64 = Iadd v828, v845
+	v849:i32 = Uload8 v848, 0x37
+	v850:i32 = Iconst_32 0x2
+	v851:i32 = Icmp neq, v849, v850
+	Brnz v851, blk2, v1467
+	Jump blk73
+
+blk73: () <-- (blk72)
+	Jump blk62, v515, v1467, v530, v788
+
+blk74: () <-- (blk62)
+	Jump blk2, v1465
+
+blk75: (v863:i32,v1122:i32,v1164:i32,v1274:i32,v1291:i32,v1301:i32,v1313:i32,v1395:i32,v1410:i32,v1439:i32,v1476:i32) <-- (blk91,blk76)
+	Brnz v863, blk2, v1476
+	Jump blk103
+
+blk76: (v1121:i32,v1123:i32,v1167:i32,v1278:i32,v1295:i32,v1302:i32,v1319:i32,v1399:i32,v1415:i32,v1444:i32,v1481:i32) <-- (blk80,blk87,blk82,blk89,blk101,blk77)
+	Jump blk75, v1121, v1123, v1167, v1278, v1295, v1302, v1319, v1399, v1415, v1444, v1481
+
+blk77: (v1124:i32,v1168:i32,v1279:i32,v1296:i32,v1303:i32,v1320:i32,v1400:i32,v1416:i32,v1445:i32,v1482:i32) <-- (blk84,blk98)
+	v1120:i32 = Iconst_32 0x0
+	Jump blk76, v1120, v1124, v1168, v1279, v1296, v1303, v1320, v1400, v1416, v1445, v1482
+
+blk78: (v883:i32,v893:i32,v912:i32,v913:i32,v951:i32,v1165:i32,v1275:i32,v1292:i32,v1314:i32,v1396:i32,v1411:i32,v1440:i32,v1477:i32) <-- (blk42,blk96)
+	v884:i64 = Iconst_64 0x78
+	v885:i64 = UExtend v883, 32->64
+	v886:i64 = Uload32 module_ctx, 0x10
+	v887:i64 = Iadd v885, v884
+	v888:i32 = Icmp lt_u, v886, v887
+	ExitIfTrue v888, exec_ctx, memory_out_of_bounds
+	v889:i64 = Load module_ctx, 0x8
+	v890:i64 = Iadd v889, v885
+	v891:i32 = Load v890, 0x74
+	Brz v891, blk81
+	Jump blk80
+
+blk79: () <-- (blk97)
+	v1083:i64 = Iconst_64 0x78
+	v1084:i64 = UExtend v1078, 32->64
+	v1085:i64 = Iadd v1084, v1083
+	v1086:i32 = Icmp lt_u, v1075, v1085
+	ExitIfTrue v1086, exec_ctx, memory_out_of_bounds
+	v1087:i64 = Iadd v1074, v1084
+	v1088:i32 = Load v1087, 0x74
+	v1089:i64 = Iconst_64 0x63
+	v1090:i64 = UExtend v1088, 32->64
+	v1091:i64 = Iadd v1090, v1089
+	v1092:i32 = Icmp lt_u, v1075, v1091
+	ExitIfTrue v1092, exec_ctx, memory_out_of_bounds
+	v1093:i64 = Iadd v1074, v1090
+	v1094:i32 = Uload8 v1093, 0x62
+	Brz v1094, blk100
+	Jump blk99
+
+blk80: () <-- (blk78)
+	v892:i32 = Iconst_32 0x1
+	v894:i32 = Call f4108:sig3, exec_ctx, module_ctx, v891, v893
+	v895:i64 = Load module_ctx, 0x8
+	v896:i64 = Uload32 module_ctx, 0x10
+	v897:i32 = Load module_ctx, 0x4e0
+	v898:i32 = Load module_ctx, 0x4f0
+	Brnz v894, blk76, v892, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+	Jump blk83
+
+blk81: () <-- (blk78)
+	Jump blk82
+
+blk82: () <-- (blk81)
+	v938:i64 = Iconst_64 0x5c
+	v939:i64 = UExtend v883, 32->64
+	v940:i64 = Iadd v939, v938
+	v941:i32 = Icmp lt_u, v886, v940
+	ExitIfTrue v941, exec_ctx, memory_out_of_bounds
+	v942:i64 = Iadd v889, v939
+	Store v912, v942, 0x58
+	v943:i32 = Iconst_32 0x0
+	v944:i32 = Call f4091:sig3, exec_ctx, module_ctx, v883, v912
+	v945:i64 = Load module_ctx, 0x8
+	v946:i64 = Uload32 module_ctx, 0x10
+	v947:i32 = Load module_ctx, 0x4e0
+	v948:i32 = Load module_ctx, 0x4f0
+	v949:i32 = Iconst_32 0x0
+	v950:i32 = Icmp eq, v944, v949
+	Brnz v950, blk76, v943, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+	Jump blk89
+
+blk83: () <-- (blk80)
+	v899:i64 = Iconst_64 0x78
+	v900:i64 = UExtend v883, 32->64
+	v901:i64 = Iadd v900, v899
+	v902:i32 = Icmp lt_u, v896, v901
+	ExitIfTrue v902, exec_ctx, memory_out_of_bounds
+	v903:i64 = Iadd v895, v900
+	v904:i32 = Load v903, 0x74
+	v905:i64 = Iconst_64 0x63
+	v906:i64 = UExtend v904, 32->64
+	v907:i64 = Iadd v906, v905
+	v908:i32 = Icmp lt_u, v896, v907
+	ExitIfTrue v908, exec_ctx, memory_out_of_bounds
+	v909:i64 = Iadd v895, v906
+	v910:i32 = Uload8 v909, 0x62
+	Brz v910, blk86
+	Jump blk85
+
+blk84: (v928:i32,v1125:i32,v1169:i32,v1280:i32,v1297:i32,v1304:i32,v1321:i32,v1401:i32,v1417:i32,v1446:i32,v1483:i32) <-- (blk85,blk88)
+	v929:i32 = Call f4102:sig1, exec_ctx, module_ctx, v928
+	v930:i64 = Load module_ctx, 0x8
+	v931:i64 = Uload32 module_ctx, 0x10
+	v932:i32 = Load module_ctx, 0x4e0
+	v933:i32 = Load module_ctx, 0x4f0
+	Call f76:sig0, exec_ctx, module_ctx, v929
+	v934:i64 = Load module_ctx, 0x8
+	v935:i64 = Uload32 module_ctx, 0x10
+	v936:i32 = Load module_ctx, 0x4e0
+	v937:i32 = Load module_ctx, 0x4f0
+	Jump blk77, v1125, v1169, v1280, v1297, v1304, v1321, v1401, v1417, v1446, v1483
+
+blk85: () <-- (blk83)
+	v911:i32 = Iconst_32 0x0
+	Store v911, v903, 0x74
+	Jump blk84, v904, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+
+blk86: () <-- (blk83)
+	Jump blk87
+
+blk87: () <-- (blk86)
+	Call f4144:sig6, exec_ctx, module_ctx, v883, v912, v913
+	v914:i64 = Load module_ctx, 0x8
+	v915:i64 = Uload32 module_ctx, 0x10
+	v916:i32 = Load module_ctx, 0x4e0
+	v917:i32 = Load module_ctx, 0x4f0
+	v918:i64 = Iconst_64 0x78
+	v919:i64 = UExtend v883, 32->64
+	v920:i64 = Iadd v919, v918
+	v921:i32 = Icmp lt_u, v915, v920
+	ExitIfTrue v921, exec_ctx, memory_out_of_bounds
+	v922:i64 = Iadd v914, v919
+	v923:i32 = Load v922, 0x74
+	v924:i32 = Iconst_32 0x0
+	v925:i32 = Iconst_32 0x0
+	Store v925, v922, 0x74
+	v926:i32 = Iconst_32 0x0
+	v927:i32 = Icmp eq, v923, v926
+	Brnz v927, blk76, v924, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+	Jump blk88
+
+blk88: () <-- (blk87)
+	Jump blk84, v923, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+
+blk89: () <-- (blk82)
+	Call f4138:sig6, exec_ctx, module_ctx, v883, v951, v913
+	v952:i64 = Load module_ctx, 0x8
+	v953:i64 = Uload32 module_ctx, 0x10
+	v954:i32 = Load module_ctx, 0x4e0
+	v955:i32 = Load module_ctx, 0x4f0
+	v956:i32 = Call f4139:sig4, exec_ctx, module_ctx, v883, v912, v913
+	v957:i64 = Load module_ctx, 0x8
+	v958:i64 = Uload32 module_ctx, 0x10
+	v959:i32 = Load module_ctx, 0x4e0
+	v960:i32 = Load module_ctx, 0x4f0
+	Brnz v956, blk76, v943, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+	Jump blk90
+
+blk90: () <-- (blk89)
+	v961:i64 = Iconst_64 0x4
+	v962:i64 = UExtend v912, 32->64
+	v963:i64 = Iadd v962, v961
+	v964:i32 = Icmp lt_u, v958, v963
+	ExitIfTrue v964, exec_ctx, memory_out_of_bounds
+	v965:i64 = Iadd v957, v962
+	v966:i32 = Load v965, 0x0
+	v967:i64 = Iconst_64 0x1c
+	v968:i64 = UExtend v966, 32->64
+	v969:i64 = Iadd v968, v967
+	v970:i32 = Icmp lt_u, v958, v969
+	ExitIfTrue v970, exec_ctx, memory_out_of_bounds
+	v971:i64 = Iadd v957, v968
+	v972:i32 = Load v971, 0x18
+	v973:i64 = Load module_ctx, 0x508
+	v974:i32 = Load v973, 0x8
+	v975:i32 = Icmp ge_u, v972, v974
+	ExitIfTrue v975, exec_ctx, table_out_of_bounds
+	v976:i64 = Load v973, 0x0
+	v977:i64 = Iconst_64 0x3
+	v978:i32 = Ishl v972, v977
+	v979:i64 = Iadd v976, v978
+	v980:i64 = Load v979, 0x0
+	v981:i64 = Iconst_64 0x0
+	v982:i32 = Icmp eq, v980, v981
+	ExitIfTrue v982, exec_ctx, indirect_call_null_pointer
+	v983:i32 = Load v980, 0x10
+	v984:i64 = Load module_ctx, 0x500
+	v985:i32 = Load v984, 0x4
+	v986:i32 = Icmp neq, v983, v985
+	ExitIfTrue v986, exec_ctx, indirect_call_type_mismatch
+	v987:i64 = Load v980, 0x0
+	v988:i64 = Load v980, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v989:i32 = CallIndirect v987:sig1, exec_ctx, v988, v912
+	v990:i64 = Load module_ctx, 0x8
+	v991:i64 = Uload32 module_ctx, 0x10
+	v992:i32 = Load module_ctx, 0x4e0
+	v993:i32 = Load module_ctx, 0x4f0
+	v994:i32 = Iconst_32 0x0
+	v995:i32 = Icmp eq, v989, v994
+	Brz v995, blk92
+	Jump blk91
+
+blk91: () <-- (blk90)
+	Call f4140:sig6, exec_ctx, module_ctx, v883, v912, v913
+	v996:i64 = Load module_ctx, 0x8
+	v997:i64 = Uload32 module_ctx, 0x10
+	v998:i32 = Load module_ctx, 0x4e0
+	v999:i32 = Load module_ctx, 0x4f0
+	v1000:i32 = Iconst_32 0x0
+	Jump blk75, v1000, v912, v1165, v1275, v1292, v893, v1314, v1396, v1411, v1440, v1477
+
+blk92: () <-- (blk90)
+	Jump blk93
+
+blk93: () <-- (blk92)
+	v1001:i32 = Iconst_32 0x64
+	v1002:i32 = Call f106:sig1, exec_ctx, module_ctx, v1001
+	v1003:i64 = Load module_ctx, 0x8
+	v1004:i64 = Uload32 module_ctx, 0x10
+	v1005:i32 = Load module_ctx, 0x4e0
+	v1006:i32 = Load module_ctx, 0x4f0
+	v1007:i32 = Call f4101:sig3, exec_ctx, module_ctx, v1002, v883
+	v1008:i64 = Load module_ctx, 0x8
+	v1009:i64 = Uload32 module_ctx, 0x10
+	v1010:i32 = Load module_ctx, 0x4e0
+	v1011:i32 = Load module_ctx, 0x4f0
+	v1012:i64 = Iconst_64 0x78
+	v1013:i64 = UExtend v883, 32->64
+	v1014:i64 = Iadd v1013, v1012
+	v1015:i32 = Icmp lt_u, v1009, v1014
+	ExitIfTrue v1015, exec_ctx, memory_out_of_bounds
+	v1016:i64 = Iadd v1008, v1013
+	v1017:i32 = Load v1016, 0x74
+	Store v1007, v1016, 0x74
+	Brz v1017, blk95
+	Jump blk94
+
+blk94: () <-- (blk93)
+	v1019:i32 = Call f4102:sig1, exec_ctx, module_ctx, v1017
+	v1020:i64 = Load module_ctx, 0x8
+	v1021:i64 = Uload32 module_ctx, 0x10
+	v1022:i32 = Load module_ctx, 0x4e0
+	v1023:i32 = Load module_ctx, 0x4f0
+	Call f76:sig0, exec_ctx, module_ctx, v1019
+	v1024:i64 = Load module_ctx, 0x8
+	v1025:i64 = Uload32 module_ctx, 0x10
+	v1026:i32 = Load module_ctx, 0x4e0
+	v1027:i32 = Load module_ctx, 0x4f0
+	v1028:i64 = Iconst_64 0x78
+	v1029:i64 = UExtend v883, 32->64
+	v1030:i64 = Iadd v1029, v1028
+	v1031:i32 = Icmp lt_u, v1025, v1030
+	ExitIfTrue v1031, exec_ctx, memory_out_of_bounds
+	v1032:i64 = Iadd v1024, v1029
+	v1033:i32 = Load v1032, 0x74
+	Jump blk96, v1033, v912, v913, v883, v893, v951, v1165, v1275, v1292, v1314, v1396, v1411, v1440, v1477
+
+blk95: () <-- (blk93)
+	Jump blk96, v1007, v912, v913, v883, v893, v951, v1165, v1275, v1292, v1314, v1396, v1411, v1440, v1477
+
+blk96: (v1018:i32,v1034:i32,v1070:i32,v1078:i32,v1081:i32,v1082:i32,v1166:i32,v1277:i32,v1294:i32,v1318:i32,v1398:i32,v1414:i32,v1443:i32,v1480:i32) <-- (blk94,blk95)
+	v1035:i64 = Iconst_64 0x4
+	v1036:i64 = UExtend v1034, 32->64
+	v1037:i64 = Uload32 module_ctx, 0x10
+	v1038:i64 = Iadd v1036, v1035
+	v1039:i32 = Icmp lt_u, v1037, v1038
+	ExitIfTrue v1039, exec_ctx, memory_out_of_bounds
+	v1040:i64 = Load module_ctx, 0x8
+	v1041:i64 = Iadd v1040, v1036
+	v1042:i32 = Load v1041, 0x0
+	v1043:i64 = Iconst_64 0x38
+	v1044:i64 = UExtend v1042, 32->64
+	v1045:i64 = Iadd v1044, v1043
+	v1046:i32 = Icmp lt_u, v1037, v1045
+	ExitIfTrue v1046, exec_ctx, memory_out_of_bounds
+	v1047:i64 = Iadd v1040, v1044
+	v1048:i32 = Load v1047, 0x34
+	v1049:i64 = Load module_ctx, 0x508
+	v1050:i32 = Load v1049, 0x8
+	v1051:i32 = Icmp ge_u, v1048, v1050
+	ExitIfTrue v1051, exec_ctx, table_out_of_bounds
+	v1052:i64 = Load v1049, 0x0
+	v1053:i64 = Iconst_64 0x3
+	v1054:i32 = Ishl v1048, v1053
+	v1055:i64 = Iadd v1052, v1054
+	v1056:i64 = Load v1055, 0x0
+	v1057:i64 = Iconst_64 0x0
+	v1058:i32 = Icmp eq, v1056, v1057
+	ExitIfTrue v1058, exec_ctx, indirect_call_null_pointer
+	v1059:i32 = Load v1056, 0x10
+	v1060:i64 = Load module_ctx, 0x500
+	v1061:i32 = Load v1060, 0x4
+	v1062:i32 = Icmp neq, v1059, v1061
+	ExitIfTrue v1062, exec_ctx, indirect_call_type_mismatch
+	v1063:i64 = Load v1056, 0x0
+	v1064:i64 = Load v1056, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v1065:i32 = CallIndirect v1063:sig1, exec_ctx, v1064, v1034
+	v1066:i64 = Load module_ctx, 0x8
+	v1067:i64 = Uload32 module_ctx, 0x10
+	v1068:i32 = Load module_ctx, 0x4e0
+	v1069:i32 = Load module_ctx, 0x4f0
+	v1071:i32 = Iconst_32 0x0
+	v1072:i32 = Iconst_32 0x0
+	v1073:i32 = Call f4107:sig8, exec_ctx, module_ctx, v1018, v1065, v1070, v1071, v1072
+	v1074:i64 = Load module_ctx, 0x8
+	v1075:i64 = Uload32 module_ctx, 0x10
+	v1076:i32 = Load module_ctx, 0x4e0
+	v1077:i32 = Load module_ctx, 0x4f0
+	Brnz v1073, blk78, v1078, v1081, v1034, v1070, v1082, v1166, v1277, v1294, v1318, v1398, v1414, v1443, v1480
+	Jump blk97
+
+blk97: () <-- (blk96)
+	Jump blk79
+
+blk98: (v1110:i32,v1126:i32,v1170:i32,v1281:i32,v1298:i32,v1305:i32,v1322:i32,v1402:i32,v1418:i32,v1447:i32,v1484:i32) <-- (blk99,blk102)
+	v1111:i32 = Call f4102:sig1, exec_ctx, module_ctx, v1110
+	v1112:i64 = Load module_ctx, 0x8
+	v1113:i64 = Uload32 module_ctx, 0x10
+	v1114:i32 = Load module_ctx, 0x4e0
+	v1115:i32 = Load module_ctx, 0x4f0
+	Call f76:sig0, exec_ctx, module_ctx, v1111
+	v1116:i64 = Load module_ctx, 0x8
+	v1117:i64 = Uload32 module_ctx, 0x10
+	v1118:i32 = Load module_ctx, 0x4e0
+	v1119:i32 = Load module_ctx, 0x4f0
+	Jump blk77, v1126, v1170, v1281, v1298, v1305, v1322, v1402, v1418, v1447, v1484
+
+blk99: () <-- (blk79)
+	v1095:i32 = Iconst_32 0x0
+	Store v1095, v1087, 0x74
+	Jump blk98, v1088, v1034, v1166, v1277, v1294, v1081, v1318, v1398, v1414, v1443, v1480
+
+blk100: () <-- (blk79)
+	Jump blk101
+
+blk101: () <-- (blk100)
+	Call f4144:sig6, exec_ctx, module_ctx, v1078, v1034, v1070
+	v1096:i64 = Load module_ctx, 0x8
+	v1097:i64 = Uload32 module_ctx, 0x10
+	v1098:i32 = Load module_ctx, 0x4e0
+	v1099:i32 = Load module_ctx, 0x4f0
+	v1100:i64 = Iconst_64 0x78
+	v1101:i64 = UExtend v1078, 32->64
+	v1102:i64 = Iadd v1101, v1100
+	v1103:i32 = Icmp lt_u, v1097, v1102
+	ExitIfTrue v1103, exec_ctx, memory_out_of_bounds
+	v1104:i64 = Iadd v1096, v1101
+	v1105:i32 = Load v1104, 0x74
+	v1106:i32 = Iconst_32 0x0
+	v1107:i32 = Iconst_32 0x0
+	Store v1107, v1104, 0x74
+	v1108:i32 = Iconst_32 0x0
+	v1109:i32 = Icmp eq, v1105, v1108
+	Brnz v1109, blk76, v1106, v1034, v1166, v1277, v1294, v1081, v1318, v1398, v1414, v1443, v1480
+	Jump blk102
+
+blk102: () <-- (blk101)
+	Jump blk98, v1105, v1034, v1166, v1277, v1294, v1081, v1318, v1398, v1414, v1443, v1480
+
+blk103: () <-- (blk75)
+	v1127:i64 = Iconst_64 0x4
+	v1128:i64 = UExtend v1122, 32->64
+	v1129:i64 = Uload32 module_ctx, 0x10
+	v1130:i64 = Iadd v1128, v1127
+	v1131:i32 = Icmp lt_u, v1129, v1130
+	ExitIfTrue v1131, exec_ctx, memory_out_of_bounds
+	v1132:i64 = Load module_ctx, 0x8
+	v1133:i64 = Iadd v1132, v1128
+	v1134:i32 = Load v1133, 0x0
+	v1135:i64 = Iconst_64 0x1c
+	v1136:i64 = UExtend v1134, 32->64
+	v1137:i64 = Iadd v1136, v1135
+	v1138:i32 = Icmp lt_u, v1129, v1137
+	ExitIfTrue v1138, exec_ctx, memory_out_of_bounds
+	v1139:i64 = Iadd v1132, v1136
+	v1140:i32 = Load v1139, 0x18
+	v1141:i64 = Load module_ctx, 0x508
+	v1142:i32 = Load v1141, 0x8
+	v1143:i32 = Icmp ge_u, v1140, v1142
+	ExitIfTrue v1143, exec_ctx, table_out_of_bounds
+	v1144:i64 = Load v1141, 0x0
+	v1145:i64 = Iconst_64 0x3
+	v1146:i32 = Ishl v1140, v1145
+	v1147:i64 = Iadd v1144, v1146
+	v1148:i64 = Load v1147, 0x0
+	v1149:i64 = Iconst_64 0x0
+	v1150:i32 = Icmp eq, v1148, v1149
+	ExitIfTrue v1150, exec_ctx, indirect_call_null_pointer
+	v1151:i32 = Load v1148, 0x10
+	v1152:i64 = Load module_ctx, 0x500
+	v1153:i32 = Load v1152, 0x4
+	v1154:i32 = Icmp neq, v1151, v1153
+	ExitIfTrue v1154, exec_ctx, indirect_call_type_mismatch
+	v1155:i64 = Load v1148, 0x0
+	v1156:i64 = Load v1148, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v1157:i32 = CallIndirect v1155:sig1, exec_ctx, v1156, v1122
+	v1158:i64 = Load module_ctx, 0x8
+	v1159:i64 = Uload32 module_ctx, 0x10
+	v1160:i32 = Load module_ctx, 0x4e0
+	v1161:i32 = Load module_ctx, 0x4f0
+	v1162:i32 = Iconst_32 0x0
+	v1163:i32 = Icmp eq, v1157, v1162
+	Brnz v1163, blk104, v1122, v1164, v1274, v1291, v1301, v1313, v1395, v1410, v1439, v1476
+	Jump blk105
+
+blk104: (v1197:i32,v1271:i32,v1273:i32,v1290:i32,v1300:i32,v1312:i32,v1394:i32,v1409:i32,v1438:i32,v1475:i32) <-- (blk103,blk105,blk106)
+	v1198:i64 = Iconst_64 0x4
+	v1199:i64 = UExtend v1197, 32->64
+	v1200:i64 = Uload32 module_ctx, 0x10
+	v1201:i64 = Iadd v1199, v1198
+	v1202:i32 = Icmp lt_u, v1200, v1201
+	ExitIfTrue v1202, exec_ctx, memory_out_of_bounds
+	v1203:i64 = Load module_ctx, 0x8
+	v1204:i64 = Iadd v1203, v1199
+	v1205:i32 = Load v1204, 0x0
+	v1206:i64 = Iconst_64 0x24
+	v1207:i64 = UExtend v1205, 32->64
+	v1208:i64 = Iadd v1207, v1206
+	v1209:i32 = Icmp lt_u, v1200, v1208
+	ExitIfTrue v1209, exec_ctx, memory_out_of_bounds
+	v1210:i64 = Iadd v1203, v1207
+	v1211:i32 = Load v1210, 0x20
+	v1212:i64 = Load module_ctx, 0x508
+	v1213:i32 = Load v1212, 0x8
+	v1214:i32 = Icmp ge_u, v1211, v1213
+	ExitIfTrue v1214, exec_ctx, table_out_of_bounds
+	v1215:i64 = Load v1212, 0x0
+	v1216:i64 = Iconst_64 0x3
+	v1217:i32 = Ishl v1211, v1216
+	v1218:i64 = Iadd v1215, v1217
+	v1219:i64 = Load v1218, 0x0
+	v1220:i64 = Iconst_64 0x0
+	v1221:i32 = Icmp eq, v1219, v1220
+	ExitIfTrue v1221, exec_ctx, indirect_call_null_pointer
+	v1222:i32 = Load v1219, 0x10
+	v1223:i64 = Load module_ctx, 0x500
+	v1224:i32 = Load v1223, 0x4
+	v1225:i32 = Icmp neq, v1222, v1224
+	ExitIfTrue v1225, exec_ctx, indirect_call_type_mismatch
+	v1226:i64 = Load v1219, 0x0
+	v1227:i64 = Load v1219, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v1228:i32 = CallIndirect v1226:sig1, exec_ctx, v1227, v1197
+	v1229:i64 = Load module_ctx, 0x8
+	v1230:i64 = Uload32 module_ctx, 0x10
+	v1231:i32 = Load module_ctx, 0x4e0
+	v1232:i32 = Load module_ctx, 0x4f0
+	v1233:i32 = Iconst_32 0x0
+	v1234:i32 = Icmp eq, v1228, v1233
+	Brz v1234, blk110
+	Jump blk109
+
+blk105: () <-- (blk103)
+	v1171:i64 = Iconst_64 0x14
+	v1172:i64 = UExtend v2, 32->64
+	v1173:i64 = Iadd v1172, v1171
+	v1174:i32 = Icmp lt_u, v1159, v1173
+	ExitIfTrue v1174, exec_ctx, memory_out_of_bounds
+	v1175:i64 = Iadd v1158, v1172
+	v1176:i32 = Load v1175, 0x10
+	v1177:i64 = Iconst_64 0xb
+	v1178:i64 = UExtend v1176, 32->64
+	v1179:i64 = Iadd v1178, v1177
+	v1180:i32 = Icmp lt_u, v1159, v1179
+	ExitIfTrue v1180, exec_ctx, memory_out_of_bounds
+	v1181:i64 = Iadd v1158, v1178
+	v1182:i32 = Uload8 v1181, 0xa
+	v1183:i32 = Iconst_32 0x0
+	v1184:i32 = Icmp eq, v1182, v1183
+	Brnz v1184, blk104, v1122, v1164, v1274, v1291, v1301, v1313, v1395, v1410, v1439, v1476
+	Jump blk106
+
+blk106: () <-- (blk105)
+	v1185:i32 = Load v1175, 0x4
+	v1186:i64 = Iconst_64 0xc
+	v1187:i64 = UExtend v1185, 32->64
+	v1188:i64 = Iadd v1187, v1186
+	v1189:i32 = Icmp lt_u, v1159, v1188
+	ExitIfTrue v1189, exec_ctx, memory_out_of_bounds
+	v1190:i64 = Iadd v1158, v1187
+	v1191:i32 = Load v1190, 0x8
+	v1192:i32 = Iconst_32 0x6400000
+	Call f3559:sig2, exec_ctx, module_ctx, v1191, v1192
+	v1193:i64 = Load module_ctx, 0x8
+	v1194:i64 = Uload32 module_ctx, 0x10
+	v1195:i32 = Load module_ctx, 0x4e0
+	v1196:i32 = Load module_ctx, 0x4f0
+	Jump blk104, v1122, v1164, v1274, v1291, v1301, v1313, v1395, v1410, v1439, v1476
+
+blk107: (v1330:i32,v1367:i32,v1371:i32,v1403:i32,v1419:i32,v1430:i32,v1448:i32,v1485:i32) <-- (blk111,blk115)
+	v1329:i32 = Iconst_32 0x64
+	v1331:i64 = Iconst_64 0x4
+	v1332:i64 = UExtend v1330, 32->64
+	v1333:i64 = Uload32 module_ctx, 0x10
+	v1334:i64 = Iadd v1332, v1331
+	v1335:i32 = Icmp lt_u, v1333, v1334
+	ExitIfTrue v1335, exec_ctx, memory_out_of_bounds
+	v1336:i64 = Load module_ctx, 0x8
+	v1337:i64 = Iadd v1336, v1332
+	v1338:i32 = Load v1337, 0x0
+	v1339:i64 = Iconst_64 0xc
+	v1340:i64 = UExtend v1338, 32->64
+	v1341:i64 = Iadd v1340, v1339
+	v1342:i32 = Icmp lt_u, v1333, v1341
+	ExitIfTrue v1342, exec_ctx, memory_out_of_bounds
+	v1343:i64 = Iadd v1336, v1340
+	v1344:i32 = Load v1343, 0x8
+	v1345:i64 = Load module_ctx, 0x508
+	v1346:i32 = Load v1345, 0x8
+	v1347:i32 = Icmp ge_u, v1344, v1346
+	ExitIfTrue v1347, exec_ctx, table_out_of_bounds
+	v1348:i64 = Load v1345, 0x0
+	v1349:i64 = Iconst_64 0x3
+	v1350:i32 = Ishl v1344, v1349
+	v1351:i64 = Iadd v1348, v1350
+	v1352:i64 = Load v1351, 0x0
+	v1353:i64 = Iconst_64 0x0
+	v1354:i32 = Icmp eq, v1352, v1353
+	ExitIfTrue v1354, exec_ctx, indirect_call_null_pointer
+	v1355:i32 = Load v1352, 0x10
+	v1356:i64 = Load module_ctx, 0x500
+	v1357:i32 = Load v1356, 0x4
+	v1358:i32 = Icmp neq, v1355, v1357
+	ExitIfTrue v1358, exec_ctx, indirect_call_type_mismatch
+	v1359:i64 = Load v1352, 0x0
+	v1360:i64 = Load v1352, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v1361:i32 = CallIndirect v1359:sig1, exec_ctx, v1360, v1330
+	v1362:i64 = Load module_ctx, 0x8
+	v1363:i64 = Uload32 module_ctx, 0x10
+	v1364:i32 = Load module_ctx, 0x4e0
+	v1365:i32 = Load module_ctx, 0x4f0
+	Brnz v1361, blk2, v1485
+	Jump blk116
+
+blk108: () <-- (blk109)
+	v1307:i64 = Iconst_64 0x34
+	v1308:i64 = UExtend v2, 32->64
+	v1309:i64 = Iadd v1308, v1307
+	v1310:i32 = Icmp lt_u, v1265, v1309
+	ExitIfTrue v1310, exec_ctx, memory_out_of_bounds
+	v1311:i64 = Iadd v1264, v1308
+	Store v1273, v1311, 0x30
+	Store v1290, v1311, 0x2c
+	v1323:i32 = Iconst_32 0x1
+	v1324:i32 = Isub v1312, v1323
+	v1325:i32 = Iconst_32 0x64
+	v1326:i32 = Select v1324, v1324, v1325
+	Brnz v1324, blk41, v1273, v1290, v1394, v1409, v1271, v1438, v1300, v1326, v1475
+	Jump blk114
+
+blk109: () <-- (blk104)
+	v1235:i64 = Iconst_64 0x4
+	v1236:i64 = UExtend v1197, 32->64
+	v1237:i64 = Iadd v1236, v1235
+	v1238:i32 = Icmp lt_u, v1230, v1237
+	ExitIfTrue v1238, exec_ctx, memory_out_of_bounds
+	v1239:i64 = Iadd v1229, v1236
+	v1240:i32 = Load v1239, 0x0
+	v1241:i64 = Iconst_64 0x20
+	v1242:i64 = UExtend v1240, 32->64
+	v1243:i64 = Iadd v1242, v1241
+	v1244:i32 = Icmp lt_u, v1230, v1243
+	ExitIfTrue v1244, exec_ctx, memory_out_of_bounds
+	v1245:i64 = Iadd v1229, v1242
+	v1246:i32 = Load v1245, 0x1c
+	v1247:i64 = Load module_ctx, 0x508
+	v1248:i32 = Load v1247, 0x8
+	v1249:i32 = Icmp ge_u, v1246, v1248
+	ExitIfTrue v1249, exec_ctx, table_out_of_bounds
+	v1250:i64 = Load v1247, 0x0
+	v1251:i64 = Iconst_64 0x3
+	v1252:i32 = Ishl v1246, v1251
+	v1253:i64 = Iadd v1250, v1252
+	v1254:i64 = Load v1253, 0x0
+	v1255:i64 = Iconst_64 0x0
+	v1256:i32 = Icmp eq, v1254, v1255
+	ExitIfTrue v1256, exec_ctx, indirect_call_null_pointer
+	v1257:i32 = Load v1254, 0x10
+	v1258:i64 = Load module_ctx, 0x500
+	v1259:i32 = Load v1258, 0x4
+	v1260:i32 = Icmp neq, v1257, v1259
+	ExitIfTrue v1260, exec_ctx, indirect_call_type_mismatch
+	v1261:i64 = Load v1254, 0x0
+	v1262:i64 = Load v1254, 0x8
+	Store module_ctx, exec_ctx, 0x8
+	v1263:i32 = CallIndirect v1261:sig1, exec_ctx, v1262, v1197
+	v1264:i64 = Load module_ctx, 0x8
+	v1265:i64 = Uload32 module_ctx, 0x10
+	v1266:i32 = Load module_ctx, 0x4e0
+	v1267:i32 = Load module_ctx, 0x4f0
+	v1268:i32 = Iconst_32 0x0
+	v1269:i32 = Icmp eq, v1263, v1268
+	Brnz v1269, blk108
+	Jump blk112
+
+blk110: () <-- (blk104)
+	Jump blk111, v1271, v1273, v1290, v1300, v1394, v1409, v1438, v1475
+
+blk111: (v1270:i32,v1272:i32,v1289:i32,v1299:i32,v1393:i32,v1408:i32,v1437:i32,v1474:i32) <-- (blk112,blk110)
+	v1282:i64 = Iconst_64 0x34
+	v1283:i64 = UExtend v2, 32->64
+	v1284:i64 = Uload32 module_ctx, 0x10
+	v1285:i64 = Iadd v1283, v1282
+	v1286:i32 = Icmp lt_u, v1284, v1285
+	ExitIfTrue v1286, exec_ctx, memory_out_of_bounds
+	v1287:i64 = Load module_ctx, 0x8
+	v1288:i64 = Iadd v1287, v1283
+	Store v1272, v1288, 0x30
+	Store v1289, v1288, 0x2c
+	Brnz v1299, blk107, v1299, v1272, v1289, v1393, v1408, v1270, v1437, v1474
+	Jump blk113
+
+blk112: () <-- (blk109)
+	Jump blk111, v1271, v1273, v1290, v1300, v1394, v1409, v1438, v1475
+
+blk113: () <-- (blk111)
+	v1306:i32 = Iconst_32 0x64
+	Jump blk41, v1272, v1289, v1393, v1408, v1270, v1437, v1299, v1306, v1474
+
+blk114: () <-- (blk108)
+	v1327:i32 = Iconst_32 0x0
+	v1328:i32 = Icmp eq, v1300, v1327
+	Brnz v1328, blk41, v1273, v1290, v1394, v1409, v1271, v1438, v1300, v1326, v1475
+	Jump blk115
+
+blk115: () <-- (blk114)
+	Jump blk107, v1300, v1273, v1290, v1394, v1409, v1271, v1438, v1475
+
+blk116: () <-- (blk107)
+	Jump blk41, v1367, v1371, v1403, v1419, v1430, v1448, v1330, v1329, v1485
+
+blk117: () <-- (blk41)
+	v1383:i64 = Iconst_64 0x8
+	v1384:i64 = UExtend v1370, 32->64
+	v1385:i64 = Iadd v1384, v1383
+	v1386:i32 = Icmp lt_u, v1374, v1385
+	ExitIfTrue v1386, exec_ctx, memory_out_of_bounds
+	v1387:i32 = Load v1378, 0x4
+	v1388:i32 = Iconst_32 0x4
+	v1389:i32 = Iadd v1370, v1388
+	Jump blk119, v1391, v1387, v1406, v1429, v1435, v1389, v1460, v1463, v1472
+
+blk118: () <-- (blk41)
+	Jump blk119, v1391, v1369, v1406, v1429, v1435, v1370, v1460, v1463, v1472
+
+blk119: (v1390:i32,v1404:i32,v1405:i32,v1428:i32,v1434:i32,v1450:i32,v1459:i32,v1462:i32,v1471:i32) <-- (blk117,blk118)
+	v1420:i32 = Icmp neq, v1404, v1405
+	v1421:i32 = Band v1390, v1420
+	v1422:i32 = Iconst_32 0x0
+	v1423:i32 = Icmp eq, v1421, v1422
+	Brnz v1423, blk39, v1404, v1405, v1428, v1434, v1450, v1390, v1459, v1462, v1471
+	Jump blk120
+
+blk120: () <-- (blk119)
+	Jump blk40
